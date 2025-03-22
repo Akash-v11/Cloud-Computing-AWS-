@@ -1,4 +1,5 @@
 Common and Shared FSx Across Two EC2 Windows Server Instances
+
 Description
 This project demonstrates how to set up a shared Amazon FSx file system between two EC2 Windows Server instances. It enables seamless file sharing and centralized storage management.
 
