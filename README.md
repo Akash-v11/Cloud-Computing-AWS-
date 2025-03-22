@@ -1,64 +1,57 @@
-Common and Shared FSx Across Two EC2 Windows Server Instances
+# Common and Shared FSx Across Two EC2 Windows Server Instances
 
-Description
-This project demonstrates how to set up a shared Amazon FSx file system between two EC2 Windows Server instances. It enables seamless file sharing and centralized storage management.
+## Description
+This project demonstrates how to set up a shared **Amazon FSx** file system between two **EC2 Windows Server instances**, enabling seamless file sharing and centralized storage management.
 
-Prerequisites
+## Prerequisites
 Before setting up FSx, ensure you have the following:
 
-An AWS account
+- ✅ An **AWS account**
+- ✅ Two **EC2 Windows Server instances**
+- ✅ **Amazon FSx for Windows File Server**
+- ✅ **AWS CLI** installed and configured
 
-Two EC2 Windows Server instances
+## Architecture Diagram (Optional)
+*(Add a diagram showing how EC2 instances connect to FSx.)*
 
-Amazon FSx for Windows File Server
+## Setup Instructions
 
-AWS CLI installed and configured
+### Step 1: Create Amazon FSx File System
+1. Navigate to the **AWS FSx Console**.
+2. Choose **FSx for Windows File Server**.
+3. Configure networking, security groups, and permissions.
+4. Deploy the FSx file system and note the **DNS Name**.
 
-Architecture Diagram (Optional)
-(You can add a diagram showing how EC2 instances connect to FSx.)
+### Step 2: Configure EC2 Instances
+1. Launch **two Windows Server EC2 instances**.
+2. Ensure they are in the **same VPC and security group**.
+3. Open **Remote Desktop Connection (RDP)** to access the instances.
 
-Setup Instructions
-Step 1: Create Amazon FSx File System
-Navigate to the AWS FSx Console
+### Step 3: Mount FSx to EC2
+1. Open **PowerShell** on each EC2 instance.
+2. Run the following command to map the shared drive:
 
-Choose FSx for Windows File Server
-
-Configure networking, security groups, and permissions
-
-Deploy the FSx file system and note the DNS Name
-
-Step 2: Configure EC2 Instances
-Launch two Windows Server EC2 instances
-
-Ensure they are in the same VPC and security group
-
-Open Remote Desktop Connection (RDP) to access the instances
-
-Step 3: Mount FSx to EC2
-Open PowerShell on each EC2 instance
-
-Run the following command to map the shared drive:
-
-powershell
-Copy
-Edit
-net use X: \\<FSx-DNS-Name>\share
-Verify shared storage access on both instances
+   ```powershell
+   net use X: \\<FSx-DNS-Name>\share
+Verify shared storage access on both instances.
 
 Usage
-Store and access shared files between EC2 instances
+📂 Store and access shared files between EC2 instances.
 
-Ideal for applications requiring centralized storage
+🚀 Ideal for applications requiring centralized storage.
 
 Security Best Practices
-Restrict FSx access using security groups
+🔒 Restrict FSx access using security groups.
 
-Enable AWS Backup for FSx
+📌 Enable AWS Backup for FSx.
 
-Use IAM policies for access control
+🔑 Use IAM policies for access control.
 
 References
-AWS FSx Documentation
+📖 AWS FSx Documentation
 
-Amazon EC2 Documentation
-
+📖 Amazon EC2 Documentation
+https://github.com/Akash-v11/Common-and-Shared-FSx-Across-Two-EC2-Windows-Server-Instances/blob/main/Cloud%20Computing%20(AWS).pdf
+ 
+ 
+ 
